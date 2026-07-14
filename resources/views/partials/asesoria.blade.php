@@ -2,11 +2,40 @@
 <section id="contacto" class="bg-beige py-24 lg:py-32"
     x-data="{
         step: 1,
+        sending: false,
+        sent: false,
+        error: false,
         get stepOneValid() {
             return this.$refs.nombre.value.trim() !== ''
                 && this.$refs.apellido.value.trim() !== ''
                 && /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(this.$refs.email.value)
                 && this.$refs.telefono.value.trim().length >= 7;
+        },
+        async submitForm(ev) {
+            const form = ev.target;
+            const data = Object.fromEntries(new FormData(form));
+            if (data['bot-field']) { this.sent = true; return; } // honeypot: silently 'succeed'
+            delete data['bot-field'];
+            data.form = 'asesoria';
+            data.sitio = location.host;
+            data.pagina = location.href;
+            this.sending = true;
+            this.error = false;
+            try {
+                const r = await fetch('https://bolt-crm.fullstacklabs.org/webhooks/forms/YBlw3lPwH7UJi1gpxtM8GdQ55CAXF7t01zsILBCXhQs1vyGS', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data),
+                });
+                if (!r.ok) throw new Error('HTTP ' + r.status);
+                this.sent = true;
+                form.reset();
+                this.step = 1;
+            } catch (e) {
+                this.error = true;
+            } finally {
+                this.sending = false;
+            }
         },
     }">
     <div class="mx-auto max-w-xl px-6 lg:px-10">
@@ -16,9 +45,9 @@
             <p class="mx-auto mt-5 max-w-lg text-lg leading-relaxed text-ink-soft">Déjanos tus datos para recibir información sobre tipologías, disponibilidad, precios, condiciones de preventa, locales comerciales o colaboración con brokers.</p>
         </div>
 
-        <form name="asesoria" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/gracias.html"
+        {{-- Envío: webhook de Bolt CRM (fetch JSON) + popup de confirmación --}}
+        <form name="asesoria" @submit.prevent="submitForm"
             class="reveal mt-12 rounded-3xl bg-white p-8 shadow-xl shadow-ink/10 ring-1 ring-ink/5 lg:p-10">
-            <input type="hidden" name="form-name" value="asesoria">
             <p class="hidden" aria-hidden="true"><label>Campo interno: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
 
             {{-- Progreso --}}
@@ -85,11 +114,33 @@
                 <div class="flex flex-col gap-3 pt-2 sm:flex-row">
                     <button type="button" @click="step = 1"
                         class="eyebrow rounded-full border border-ink/20 px-8 py-4 text-[0.7rem] text-ink transition-colors hover:border-ink hover:bg-ink hover:text-sand-50">Regresar</button>
-                    <button type="submit" id="cta-enviar"
-                        class="eyebrow flex-1 rounded-full bg-wood-500 px-8 py-4 text-[0.7rem] text-sand-50 transition-colors hover:bg-wood-400">Enviar solicitud</button>
+                    <button type="submit" id="cta-enviar" :disabled="sending"
+                        class="eyebrow flex-1 rounded-full bg-wood-500 px-8 py-4 text-[0.7rem] text-sand-50 transition-colors hover:bg-wood-400 disabled:cursor-wait disabled:opacity-60"
+                        x-text="sending ? 'Enviando…' : 'Enviar solicitud'">Enviar solicitud</button>
                 </div>
             </div>
+            <p x-show="error" x-cloak class="pt-3 text-center text-xs text-red-600">No pudimos enviar tu solicitud. Intenta de nuevo o escríbenos por WhatsApp.</p>
             <p class="pt-4 text-center text-[0.7rem] leading-relaxed text-ink-soft/70">Tu información será tratada con privacidad y utilizada únicamente para darte seguimiento.</p>
         </form>
+    </div>
+
+    {{-- ============================== POPUP DE CONFIRMACIÓN ============================== --}}
+    <div x-show="sent" x-cloak
+        class="fixed inset-0 z-[96] flex items-center justify-center p-6"
+        @keydown.escape.window="sent = false" role="dialog" aria-modal="true" aria-label="Solicitud enviada">
+        <div x-show="sent" x-transition.opacity class="absolute inset-0 bg-balam-950/80 backdrop-blur-sm" @click="sent = false"></div>
+        <div x-show="sent"
+            x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="opacity-0 translate-y-6 scale-95"
+            x-transition:enter-end="opacity-100 translate-y-0 scale-100"
+            class="relative w-full max-w-md rounded-3xl bg-white p-10 text-center shadow-2xl">
+            <span class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-wood-500/15 text-wood-500">
+                <svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            </span>
+            <h3 class="display mt-6 text-3xl font-light text-ink">¡Solicitud enviada!</h3>
+            <p class="mt-3 text-sm leading-relaxed text-ink-soft">Gracias por tu interés en Ek Balam 36. El equipo comercial te contactará muy pronto con la información solicitada.</p>
+            <button type="button" @click="sent = false"
+                class="eyebrow mt-7 inline-flex items-center justify-center rounded-full bg-wood-500 px-8 py-3.5 text-[0.65rem] text-sand-50 transition-colors hover:bg-wood-400">Entendido</button>
+        </div>
     </div>
 </section>

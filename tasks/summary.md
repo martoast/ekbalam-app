@@ -11,6 +11,12 @@ Sexto sitio de la familia. Blueprint: `docs/landing-page-structure.md` ·
 proceso: `docs/new-landing-playbook.md`. Skin: negro cálido/selva (`balam-*`),
 arena (`sand-*`), dorado discreto (`wood-*`).
 
+## Formulario
+`asesoria` (2 pasos) envía por fetch JSON al **webhook de Bolt CRM**
+(`bolt-crm.fullstacklabs.org/webhooks/forms/…`) con campos + form/sitio/pagina;
+éxito = popup de confirmación (Alpine `sent`), error = mensaje inline.
+Ya NO usa Netlify Forms.
+
 ## Secciones
 hero (fachada ⭐️PRINCIPAL) → proyecto → video → concepto "Vivir con intención"
 (mar conceptual) → ubicación + cercanías (tiempos ~aprox con leyenda) →
