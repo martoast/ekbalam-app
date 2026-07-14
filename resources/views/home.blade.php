@@ -6,7 +6,6 @@
     @include('partials.video')
     @include('partials.concepto')
     @include('partials.ubicacion')
-    @include('partials.composicion')
     @include('partials.plaza')
     @include('partials.rooftop')
     @include('partials.amenidades')
