@@ -11,7 +11,6 @@
     @include('partials.rooftop')
     @include('partials.amenidades')
     @include('partials.tipologias')
-    @include('partials.disponibilidad')
     @include('partials.patrimonial')
     @include('partials.galeria')
     @include('partials.asesoria')

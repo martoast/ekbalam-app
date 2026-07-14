@@ -91,7 +91,6 @@
             ['label' => 'Amenidades',     'href' => '#amenidades'],
             ['label' => 'Tipologías',     'href' => '#tipologias'],
             ['label' => 'Plaza comercial','href' => '#plaza'],
-            ['label' => 'Disponibilidad', 'href' => '#disponibilidad'],
         ];
         $mobileExtra = [
             ['label' => 'Contacto', 'href' => '#contacto'],
@@ -127,7 +126,7 @@
                     @foreach ($navLinks as $item)
                         <a
                             href="{{ $item['href'] }}"
-                            class="nav-link eyebrow whitespace-nowrap text-[0.6rem] transition-colors duration-300 2xl:text-[0.65rem] {{ in_array($item['label'], ['Plaza comercial', 'Disponibilidad']) ? 'hidden 2xl:inline-block' : '' }}"
+                            class="nav-link eyebrow whitespace-nowrap text-[0.6rem] transition-colors duration-300 2xl:text-[0.65rem] {{ $item['label'] === 'Plaza comercial' ? 'hidden 2xl:inline-block' : '' }}"
                             :class="navSolid ? 'text-ink-soft hover:text-wood-500' : 'text-sand-100 hover:text-white'"
                         >{{ $item['label'] }}</a>
                     @endforeach
@@ -192,7 +191,6 @@
                         <li><a href="#tipologias" class="transition-colors hover:text-wood-300">Tipologías</a></li>
                         <li><a href="#amenidades" class="transition-colors hover:text-wood-300">Rooftop y amenidades</a></li>
                         <li><a href="#plaza" class="transition-colors hover:text-wood-300">Plaza comercial</a></li>
-                        <li><a href="#disponibilidad" class="transition-colors hover:text-wood-300">Disponibilidad</a></li>
                         <li><a href="#galeria" class="transition-colors hover:text-wood-300">Galería</a></li>
                     </ul>
                 </div>
@@ -225,7 +223,7 @@
             </div>
 
             <div class="mt-14 border-t border-sand-50/10 pt-8 text-xs leading-relaxed text-sand-200/50">
-                <p>© {{ date('Y') }} Ek Balam 36 · Condos & Shopping · Puerto Morelos. Todos los derechos reservados. · Aviso de Privacidad <span class="text-sand-200/30">· v1.0.4</span></p>
+                <p>© {{ date('Y') }} Ek Balam 36 · Condos & Shopping · Puerto Morelos. Todos los derechos reservados. · Aviso de Privacidad <span class="text-sand-200/30">· v1.0.5</span></p>
                 <p class="mt-2">
                     Las imágenes, planos, renders, superficies, amenidades y representaciones mostradas pueden ser ilustrativas y están sujetas a modificaciones.
                     La disponibilidad, precios, vistas, equipamiento, promociones y condiciones comerciales deben confirmarse con el equipo correspondiente y pueden cambiar sin previo aviso.
