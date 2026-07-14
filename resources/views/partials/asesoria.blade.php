@@ -22,7 +22,7 @@
             this.sending = true;
             this.error = false;
             try {
-                const r = await fetch('https://bolt-crm.fullstacklabs.org/webhooks/forms/YBlw3lPwH7UJi1gpxtM8GdQ55CAXF7t01zsILBCXhQs1vyGS', {
+                const r = await fetch('{{ config('services.forms_webhook') }}', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data),

@@ -223,7 +223,7 @@
             </div>
 
             <div class="mt-14 border-t border-sand-50/10 pt-8 text-xs leading-relaxed text-sand-200/50">
-                <p>© {{ date('Y') }} Ek Balam 36 · Condos & Shopping · Puerto Morelos. Todos los derechos reservados. · Aviso de Privacidad <span class="text-sand-200/30">· v1.0.7</span></p>
+                <p>© {{ date('Y') }} Ek Balam 36 · Condos & Shopping · Puerto Morelos. Todos los derechos reservados. · Aviso de Privacidad <span class="text-sand-200/30">· v1.0.8</span></p>
                 <p class="mt-2">
                     Las imágenes, planos, renders, superficies, amenidades y representaciones mostradas pueden ser ilustrativas y están sujetas a modificaciones.
                     La disponibilidad, precios, vistas, equipamiento, promociones y condiciones comerciales deben confirmarse con el equipo correspondiente y pueden cambiar sin previo aviso.
