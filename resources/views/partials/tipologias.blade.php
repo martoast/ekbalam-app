@@ -81,11 +81,11 @@
                             @endforeach
                         </ul>
                         <p class="mt-5 text-sm leading-relaxed text-ink-soft">{{ $t['texto'] }}</p>
-                        <div class="mt-auto flex flex-col gap-3 pt-7 sm:flex-row">
+                        <div class="mt-auto flex flex-col gap-3 pt-7">
                             <button type="button" @click="show({{ $t['lb'] }})" id="tipologia-{{ $loop->index }}"
-                                class="eyebrow flex-1 whitespace-nowrap rounded-full bg-ink px-6 py-3 text-center text-[0.65rem] text-sand-50 transition-colors hover:bg-wood-500">Ver tipología</button>
+                                class="eyebrow w-full whitespace-nowrap rounded-full bg-ink px-6 py-3 text-center text-[0.65rem] text-sand-50 transition-colors hover:bg-wood-500">Ver tipología</button>
                             <a href="#contacto"
-                                class="eyebrow flex flex-1 items-center justify-center whitespace-nowrap rounded-full border border-ink/20 px-6 py-3 text-[0.65rem] text-ink transition-colors hover:border-ink hover:bg-ink hover:text-sand-50">Consultar</a>
+                                class="eyebrow flex w-full items-center justify-center whitespace-nowrap rounded-full border border-ink/20 px-6 py-3 text-[0.65rem] text-ink transition-colors hover:border-ink hover:bg-ink hover:text-sand-50">Consultar disponibilidad</a>
                         </div>
                     </div>
                 </article>
