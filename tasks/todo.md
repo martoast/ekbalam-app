@@ -21,4 +21,4 @@
 
 ## Ideas / siguientes
 - [ ] Sección editorial (brief sec. 20) — oculta hasta tener artículos reales.
-- [ ] Renders de jacuzzi/sauna y ludoteca (hoy tarjetas con ícono).
+- [ ] Sustituir los renders AI de jacuzzi/sauna y ludoteca (ek-jacuzzi.jpg, ek-ludoteca.jpg — generados con Nano Banana) por renders oficiales si el cliente los entrega.

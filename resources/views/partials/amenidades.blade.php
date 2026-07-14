@@ -9,8 +9,8 @@
         ['t' => 'Sala de podcast', 'sub' => 'Creación', 'desc' => 'Área planteada para producir contenido y grabar.', 'tags' => ['Amenidad proyectada'], 'imgs' => ['ek-podcast']],
         ['t' => 'Gimnasio', 'sub' => 'Bienestar', 'desc' => 'Espacio de actividad física dentro del rooftop.', 'tags' => ['Amenidad proyectada'], 'imgs' => ['ek-gym', 'ek-gym-2']],
         ['t' => 'Pool bar', 'sub' => 'Servicio', 'desc' => 'Área de servicio y descanso dentro del rooftop, sujeta a condiciones de operación.', 'tags' => ['Amenidad proyectada'], 'imgs' => ['ek-poolbar']],
-        ['t' => 'Jacuzzi y sauna', 'sub' => 'Bienestar', 'desc' => 'Espacios de relajación considerados dentro del rooftop, sujetos a confirmación.', 'icon' => 'spa'],
-        ['t' => 'Ludoteca', 'sub' => 'Familia', 'desc' => 'Área planteada para el juego y la convivencia familiar, sujeta a confirmación.', 'icon' => 'play'],
+        ['t' => 'Jacuzzi y sauna', 'sub' => 'Bienestar', 'desc' => 'Espacios de relajación considerados dentro del rooftop, sujetos a confirmación.', 'tags' => ['Amenidad proyectada'], 'imgs' => ['ek-jacuzzi']],
+        ['t' => 'Ludoteca', 'sub' => 'Familia', 'desc' => 'Área planteada para el juego y la convivencia familiar, sujeta a confirmación.', 'tags' => ['Amenidad proyectada'], 'imgs' => ['ek-ludoteca']],
     ];
     $amenitiesJs = collect($amenities)->map(fn ($a) => [
         't' => $a['t'], 'sub' => $a['sub'], 'desc' => $a['desc'],
