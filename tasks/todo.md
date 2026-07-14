@@ -1,0 +1,24 @@
+# Ek Balam 36 — Pendientes
+
+## Bloqueado por el cliente
+- [ ] **Teléfono / WhatsApp / correo / redes** del equipo comercial — CTAs de contacto
+      directo desactivados (TODOs en `layouts/app.blade.php`); solo formulario.
+- [ ] **Logos oficiales** (Ek Balam 36 + pantera, desarrollador, Alux 33 autorizado) —
+      wetransfer del brief no descargado; wordmarks de texto.
+- [ ] **Desarrollador** — razón social sin confirmar (footer dice "equipo relacionado
+      con Alux 33").
+- [ ] **Sello "16 años construyendo el presente"** — pendiente de aprobación de marca.
+- [ ] **Planos de tipologías** — "Ver tipología" abre galería de interiores.
+- [ ] **Precios / condiciones de preventa** — todo "Consultar".
+- [ ] **Tiempos de traslado** — publicados como aproximados con leyenda; verificar
+      desde la ubicación exacta.
+- [ ] **Ubicación exacta del proyecto** — mapa apunta a Puerto Morelos genérico.
+- [ ] **Aviso de Privacidad** — sin documento que enlazar.
+- [ ] Confirmar: 10 niveles, área subterránea, drive-thru (4), amenidades del rooftop.
+- [ ] Video propio (hoy: video compartido placeholder).
+- [ ] Pixel / GTM — CTAs con ids (cta-nav, cta-enviar, cta-locales, cta-inversion,
+      cta-info-proyecto, cta-asesor, cta-mapa, tipologia-*).
+
+## Ideas / siguientes
+- [ ] Sección editorial (brief sec. 20) — oculta hasta tener artículos reales.
+- [ ] Renders de jacuzzi/sauna y ludoteca (hoy tarjetas con ícono).
