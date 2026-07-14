@@ -15,7 +15,7 @@
             </p>
             <div class="mt-9 flex flex-col justify-center gap-3 sm:flex-row sm:items-center">
                 <a href="#contacto" class="eyebrow inline-flex items-center justify-center rounded-full bg-wood-500 px-8 py-4 text-[0.7rem] text-sand-50 transition-colors hover:bg-wood-400">Solicitar disponibilidad</a>
-                <a href="#contacto" id="cta-asesor"
+                <a href="https://wa.me/523312309766?text={{ rawurlencode('Hola, me interesa Ek Balam 36 en Puerto Morelos. ¿Me pueden compartir información?') }}" target="_blank" rel="noopener" id="cta-asesor"
                     class="eyebrow inline-flex items-center justify-center rounded-full border border-sand-50/40 px-8 py-4 text-[0.7rem] text-sand-50 transition-colors hover:bg-sand-50/10">Hablar con un asesor</a>
             </div>
         </div>

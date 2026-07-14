@@ -1,8 +1,8 @@
 # Ek Balam 36 — Pendientes
 
 ## Bloqueado por el cliente
-- [ ] **Teléfono / WhatsApp / correo / redes** del equipo comercial — CTAs de contacto
-      directo desactivados (TODOs en `layouts/app.blade.php`); solo formulario.
+- [x] Teléfono/WhatsApp: (+52) 33 1230 9766 — mismo número que Alux 33 (indicado por Alex).
+- [ ] **Correo electrónico y redes sociales** del equipo comercial — pendientes.
 - [ ] **Logos oficiales** (Ek Balam 36 + pantera, desarrollador, Alux 33 autorizado) —
       wetransfer del brief no descargado; wordmarks de texto.
 - [ ] **Desarrollador** — razón social sin confirmar (footer dice "equipo relacionado
