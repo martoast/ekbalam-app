@@ -9,9 +9,9 @@
 @endphp
 <span class="flex items-center gap-3 lg:gap-4 {{ $auto ? 'text-current' : 'text-sand-50' }}" role="img" aria-label="Ek Balam 36 — Condos & Shopping, Puerto Morelos">
     <span class="display whitespace-nowrap text-lg font-light uppercase tracking-[0.18em] lg:text-xl">Ek Balam <span class="text-wood-400">36</span></span>
-    <span class="h-8 w-px shrink-0 lg:h-9 {{ $auto ? 'bg-current opacity-25' : 'bg-sand-50/25' }}"></span>
+    <span class="{{ $auto ? 'hidden sm:block bg-current opacity-25' : 'bg-sand-50/25' }} h-8 w-px shrink-0 lg:h-9"></span>
     @if ($auto)
-        <span class="eyebrow whitespace-nowrap text-[0.5rem] tracking-[0.26em]">Condos <span class="opacity-60">&amp;</span> Shopping</span>
+        <span class="eyebrow hidden whitespace-nowrap text-[0.5rem] tracking-[0.26em] sm:inline">Condos <span class="opacity-60">&amp;</span> Shopping</span>
     @else
         <span class="flex flex-col leading-none">
             <span class="eyebrow whitespace-nowrap text-[0.5rem] tracking-[0.26em]">Condos &amp; Shopping</span>
